@@ -1,0 +1,15 @@
+package:
+    type:           yii2-extension
+    name:           yii2-google-analytics
+    title:          Google Analytics tracking widget for Yii2 applications
+    headline:       Yii2 Google Analytics
+    keywords:       yii2, plugin, google, analytics, counter
+    description:    |
+        Provides really easy adding [Google Analytics] tracking widget to a site.
+        Even easier then adding a widget into a site layout.
+
+        Works by adding Behavior to the Application View.
+        Behavior listens to [EVENT_END_BODY] and echos the counter script.
+
+        [Google Analytics]: https://analytics.google.com/
+        [EVENT_END_BODY]: http://www.yiiframework.com/doc-2.0/yii-web-view.html#EVENT_END_BODY-detail
