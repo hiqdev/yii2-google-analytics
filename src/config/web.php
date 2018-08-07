@@ -17,12 +17,15 @@ return [
         'view' => [
             'as GoogleAnalytics' => [
                 'class' => \hiqdev\yii2\GoogleAnalytics\Behavior::class,
-                'builder' => [
-                    'class' => \hiqdev\yii2\GoogleAnalytics\CodeBuilder::class,
-                    'id' => $params['googleAnalytics.id'],
-                    'params' => $params['googleAnalytics.params'],
-                ],
             ],
         ],
     ],
+    'container' => [
+        'definitions' => [
+            \hiqdev\yii2\GoogleAnalytics\CodeBuilder::class => [
+                'id' => $params['googleAnalytics.id'],
+                'params' => $params['googleAnalytics.params'],
+            ]
+        ]
+    ]
 ];

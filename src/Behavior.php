@@ -10,12 +10,19 @@
 
 namespace hiqdev\yii2\GoogleAnalytics;
 
-use Yii;
 use yii\web\View;
 
 class Behavior extends \yii\base\Behavior
 {
+    /** @var CodeBuilder  */
     public $builder;
+
+    public function __construct(CodeBuilder $builder, array $config = [])
+    {
+        parent::__construct($config);
+
+        $this->builder = $builder;
+    }
 
     public function events()
     {
@@ -29,12 +36,8 @@ class Behavior extends \yii\base\Behavior
         echo $this->getBuilder()->render();
     }
 
-    public function getBuilder()
+    public function getBuilder(): CodeBuilder
     {
-        if (!is_object($this->builder)) {
-            $this->builder = Yii::createObject($this->builder);
-        }
-
         return $this->builder;
     }
 }

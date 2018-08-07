@@ -12,10 +12,21 @@ namespace hiqdev\yii2\GoogleAnalytics;
 
 use Yii;
 
-class CodeBuilder extends \yii\base\Object
+/**
+ * Class CodeBuilder
+ *
+ * @author Dmytro Naumenko <d.naumenko.a@gmail.com>
+ */
+class CodeBuilder extends \yii\base\BaseObject
 {
+    /**
+     * @var string
+     */
     public $id;
 
+    /**
+     * @var array
+     */
     public $params = [];
 
     public function getView()
@@ -25,10 +36,14 @@ class CodeBuilder extends \yii\base\Object
 
     public function render()
     {
+        if ($this->id === null) {
+            return '';
+        }
+
         return $this->getView()->render('@hiqdev/yii2/GoogleAnalytics/views/code.php', $this->prepareData());
     }
 
-    public function prepareData()
+    private function prepareData(): array
     {
         return [
             'id' => $this->id,
@@ -36,7 +51,7 @@ class CodeBuilder extends \yii\base\Object
         ];
     }
 
-    public function prepareParams()
+    private function prepareParams(): array
     {
         return array_filter(array_merge($this->params, [
             'id' => $this->id,
