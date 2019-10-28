@@ -10,11 +10,5 @@
 
 return [
     'googleAnalytics.id'      => null,
-    'googleAnalytics.params'  => [
-        'webvisor'              => null,
-        'trackHash'             => null,
-        'clickmap'              => null,
-        'trackLinks'            => null,
-        'accurateTrackBounce'   => null,
-    ],
+    'googleAnalytics.params'  => [],
 ];
