@@ -40,7 +40,7 @@ class CodeBuilder extends \yii\base\BaseObject
             return '';
         }
 
-        return $this->getView()->render(__DIR__ . '/views/code.php', $this->prepareData());
+        return $this->getView()->renderFile(__DIR__ . '/views/code.php', $this->prepareData());
     }
 
     private function prepareData(): array
